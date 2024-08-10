@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController ;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,36 +19,32 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::controller(AuthController ::class)->group(function(){
-    Route::get('register','register')->name('register');
-    Route::post('register','registerSave')->name('register.save');
+Route::controller(AuthController::class)->group(function () {
+    Route::get('register', 'register')->name('register');
+    Route::post('register', 'registerSave')->name('register.save');
 
-    Route::get('login','login')->name('login');
-    Route::post('login','loginAction')->name('login.action');
+    Route::get('login', 'login')->name('login');
+    Route::post('login', 'loginAction')->name('login.action');
 
-    Route::get('logout','logout')->middleware('auth')->name('logout');
+    Route::get('logout', 'logout')->middleware('auth')->name('logout');
 });
 
-Route::middleware('auth')->group(function(){
-    Route::get('dashboard',function(){
+Route::middleware('auth')->group(function () {
+    Route::get('dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
 
-    Route::controller(ProductController::class)->prefix('materiel')->group(function(){
-        Route::get('','index')->name('materiel');
+    Route::controller(ProductController::class)->prefix('materiel')->group(function () {
+        Route::get('', 'index')->name('materiel');
+        Route::get('create', 'create')->name('materiel.create');
+        Route::post('store', 'store')->name('materiel.store');
+        Route::get('show/{id}', 'show')->name('materiel.show');
+        Route::get('edit/{id}', 'edit')->name('materiel.edit');
+        Route::put('edit/{id}', 'update')->name('materiel.update');
+        Route::delete('destroy/{id}', 'destroy')->name('materiel.destroy');
+        Route::get('materieldef', 'showmaterdef')->name('materieldefect.show');
     });
 
-    Route::controller(ProductController::class)->prefix('materiel')->group(function(){
-        Route::get('','index')->name('materiel');
-        Route::get('create','create')->name('materiel.create');
-        Route::post('store','store')->name('materiel.store');
-        Route::get('show/{id}','show')->name('materiel.show');
-        Route::get('edit/{id}','edit')->name('materiel.edit');
-        Route::put('edit/{id}','update')->name('materiel.update');
-        Route::delete('destroy/{id}','destroy')->name('materiel.destroy');
-    });
-
-    Route::get('/profile',[App\Http\Controllers\AuthController::class,'profile'])->name('profile');
+    Route::get('/profile', [App\Http\Controllers\AuthController::class, 'profile'])->name('profile');
 
 });
-

@@ -1,3 +1,4 @@
+
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
 <!-- Sidebar - Brand -->
@@ -16,13 +17,28 @@
 <li class="nav-item active">
     <a class="nav-link" href="{{route('dashboard')}}">
         <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Page d'acceuil</span></a>
+        <span>Page d acceuil</span></a>
 </li>
 
 <li class="nav-item active">
-    <a class="nav-link" href="{{route('materiel')}}">
+    <a class="nav-link" href="">
         <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Gestion du Materiel</span></a>
+        <span>Gestion du Materiel</span>
+    </a>
+    <div id="materiel">
+        <ul>
+            <li>
+                <a href="{{route('materiel')}}">
+                    <span class="sub-item">Liste de materiel</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('materieldefect.show') }}">
+                        <span class="sub-item">Liste de materiel defecteux </span>
+                </a>
+            </li>
+        </ul>
+    </div>
 </li>
 
 <li class="nav-item active">

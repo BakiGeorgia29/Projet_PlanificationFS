@@ -33,7 +33,7 @@
     </div>
     <div class="row">
         <div class="d-grid">
-            <button type="submit" id="btn btn-primary">Enregistrement du matériel </button>
+            <button type="submit" id="btn btn-primary">Ajouter matériel </button>
         </div>
     </div>
 </form>

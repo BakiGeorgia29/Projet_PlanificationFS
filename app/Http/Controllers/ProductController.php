@@ -12,7 +12,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $materiel = materiel::orderBy('created_at','DESC')->get();
+        $materiel = materiel::orderBy('created_at','ASC')->get();
         return view('materiel.index',compact('materiel'));
     }
 
@@ -73,5 +73,10 @@ class ProductController extends Controller
         $materiel = Materiel::findOrFail($id);
         $materiel->delete();
         return redirect()->route('materiel')->with('sucess','Le materiel a ete supprime');
+    }
+
+    public function showmaterdef (){
+        $materieldef = Materiel::where('etat' ,'==' , 'mauvais')->get();
+        return view('materiel.materieldef', compact('materieldef'));
     }
 }
