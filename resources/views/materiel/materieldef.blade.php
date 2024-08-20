@@ -13,9 +13,7 @@
                 <th>#</th>
                 <th>Code_Matériel</th>
                 <th>Nom_Matériel</th>
-                <th>Quantité disponible</th>
-                <th>Etat</th>
-                <th>Description</th>
+                <th>Quantité</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -26,9 +24,9 @@
                         <td class="align-middle">{{$loop->iteration}}</td>
                         <td class="align-middle">{{$rs->code}}</td>
                         <td class="align-middle">{{$rs->nom}}</td>
-                        <td class="align-middle">{{$rs->quantite}}</td>
-                        <td class="align-middle">{{$rs->etat}}</td>
-                        <td class="align-middle">{{$rs->description}}</td>
+                        <td class="align-middle">{{$rs->quantitemauvais}}</td>
+                        <td class="align-middle">
+                                <a href="{{route('materiel.show',$rs->id)}}" type="button" class="btn btn-secondary">Details</a>
                         </td>
                     </tr>
                 @endforeach

@@ -4,7 +4,7 @@
 
 @section('contents')
 
-    <h1 class="mb-0">Modification d'un matériel</h1>
+    <h1 class="mb-0">Modification du matériel</h1>
     <hr />
     <form action="{{route('materiel.update',$materiel->id) }}" method="POST" enctype="multipart/form-data" >
         @csrf
@@ -12,26 +12,26 @@
         <div class="row mb-3">
             <div class="col">
                 <label class="form-label">Code du Matériel</label>
-                <input type="text" name="code" class="form-control" placeholder="code_matériel" value="{{$materiel->code}}">
-            </div>  
+                <input type="text" name="code" class="form-control" placeholder="Code_matériel" value="{{$materiel->code}}">
+            </div>
             <div class="col">
                 <label class="form-label">Nom du Matériel</label>
-                <input type="text" name="nom" class="form-control" placeholder="nom_matériel" value="{{$materiel->nom}}">
+                <input type="text" name="nom" class="form-control" placeholder="Nom_matériel" value="{{$materiel->nom}}">
             </div>
         </div>
         <div class="row mb-3">
             <div class="col">
-                <label class="form-label">Quantité</label>
-                <input type="number" name="quantite" class="form-control" placeholder="quantité" value="{{$materiel->quantite}}">
-            </div>  
+                <label class="form-label">Quantité du matériel en bon état</label>
+                <input type="number" name="quantitebon" class="form-control" placeholder="Quantité du matériel en bon état" value="{{$materiel->quantitebon}}">
+            </div>
             <div class="col">
-                <label class="form-label">Etat </label>
-                <input type="text" name="etat" class="form-control" placeholder="état_matériel" value="{{$materiel->etat}}">
+                <label class="form-label">Quantité du matériel en mauvais état</label>
+                <input type="number" name="quantitemauvais" class="form-control" placeholder="Quantité du matériel en mauvais état" value="{{$materiel->quantitemauvais}}">
             </div>
             <div class="col">
                 <label class="form-label">Description</label>
-                <textarea name="description" class="form-control" placeholder="description_matériel" >{{{$materiel->description}}}</textarea>
-            </div> 
+                <textarea name="description" class="form-control" placeholder="Description_matériel" >{{{$materiel->description}}}</textarea>
+            </div>
         </div>
 
         <div class="row">

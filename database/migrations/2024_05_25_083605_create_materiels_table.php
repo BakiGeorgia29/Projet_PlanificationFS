@@ -15,9 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('code',$length=3)->unique();
             $table->string('nom')->nullable();
-            $table->integer('quantite')->nullable();
-            $table->string('etat')->nullable();
+            $table->integer('quantitebon')->nullable();
+            $table->integer('quantitemauvais')->nullable();
             $table->text('description')->nullable();
+            $table->text('descriptiondef')->nullable();
             $table->timestamps();
         });
     }

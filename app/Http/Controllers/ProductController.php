@@ -29,8 +29,8 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        materiel::create($request->all());
-
+        $materiel = materiel::create($request->all());
+        //dd($request->all());
         return redirect()->route('materiel')->with('success','materiel a ete ajoute avec succes');
     }
 
@@ -72,11 +72,17 @@ class ProductController extends Controller
     {
         $materiel = Materiel::findOrFail($id);
         $materiel->delete();
-        return redirect()->route('materiel')->with('sucess','Le materiel a ete supprime');
+        return redirect()->route('materiel')->with('success','Le materiel a ete supprime');
     }
 
     public function showmaterdef (){
-        $materieldef = Materiel::where('etat' ,'==' , 'mauvais')->get();
+        $materieldef = Materiel::all()->where('quantitemauvais','>','0');
+        //dd($materieldef);
         return view('materiel.materieldef', compact('materieldef'));
     }
+
+    public function dechargermat(){
+        return view('materiel.formdecharger');
+    }
 }
+

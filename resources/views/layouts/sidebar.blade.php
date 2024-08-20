@@ -34,9 +34,15 @@
             </li>
             <li>
                 <a href="{{ route('materieldefect.show') }}">
-                        <span class="sub-item">Liste de materiel defecteux </span>
+                    <span class="sub-item">Liste de materiel defecteux </span>
                 </a>
             </li>
+            <li>
+                <a href="{{ route('materiel.decharger') }}">
+                    <span class="sub-item">Formulaire de decharge du materiel</span>
+                </a>
+            </li>
+
         </ul>
     </div>
 </li>

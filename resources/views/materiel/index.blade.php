@@ -19,8 +19,8 @@
                 <th>#</th>
                 <th>Code_Matériel</th>
                 <th>Nom_Matériel</th>
-                <th>Quantité disponible</th>
-                <th>Etat</th>
+                <th>Quantité du materiel en bon etat</th>
+                <th>Quantité du materiel en mauvais etat</th>
                 <th>Description</th>
                 <th>Action</th>
             </tr>
@@ -32,8 +32,8 @@
                         <td class="align-middle">{{$loop->iteration}}</td>
                         <td class="align-middle">{{$rs->code}}</td>
                         <td class="align-middle">{{$rs->nom}}</td>
-                        <td class="align-middle">{{$rs->quantite}}</td>
-                        <td class="align-middle">{{$rs->etat}}</td>
+                        <td class="align-middle">{{$rs->quantitebon}}</td>
+                        <td class="align-middle">{{$rs->quantitemauvais}}</td>
                         <td class="align-middle">{{$rs->description}}</td>
                         <td class="align-middle">
                             <div class="btn-group" role="group" aria-label="Basic-example">

@@ -12,9 +12,9 @@ class Materiel extends Model
     protected $fillable = [
         'code',
         'nom',
-        'quantite',
-        'etat',
+        'quantitebon',
+        'quantitemauvais',
         'description',
-        // 'photo',
+        'descriptiondef'
     ];
 }
